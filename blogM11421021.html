@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>極限胃袋：從早安圖美學看大胃王挑戰</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700;900&family=Outfit:wght@300;400;600;800&family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#D4AF37',
+                            deepRed: '#8B0000',
+                            zenBlue: '#1a365d',
+                            lotusPink: '#FFB7C5',
+                        },
+                        glass: {
+                            white: 'rgba(255, 255, 255, 0.7)',
+                            dark: 'rgba(15, 23, 42, 0.8)',
+                        }
+                    },
+                    fontFamily: {
+                        display: ['Noto Serif TC', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        accent: ['Zhi Mang Xing', 'cursive'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(212, 175, 55, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFD700 0%, #FFB7C5 50%, #D4AF37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .banner-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 2rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 10s ease-out;
+        }
+
+        .banner-container:hover img {
+            transform: scale(1.1);
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.5rem;
+        }
+
+        .lotus-bg {
+            background: radial-gradient(circle at center, rgba(255, 183, 197, 0.1) 0%, transparent 70%);
+        }
+
+        .section-number {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            opacity: 0.1;
+            font-size: 8rem;
+            position: absolute;
+            top: -2rem;
+            left: -1rem;
+            line-height: 1;
+        }
+    </style>
+</head>
+<body class="font-body">
+
+    <!-- Progress Bar -->
+    <div class="fixed top-0 left-0 w-full h-1 bg-brand-zenBlue z-50">
+        <div id="progress" class="h-full bg-brand-gold w-0 transition-all duration-150"></div>
+    </div>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 md:py-24 lotus-bg">
+        
+        <!-- Hero Header -->
+        <header class="text-center mb-16 space-y-6 relative">
+            <div class="inline-block px-4 py-1 rounded-full border border-brand-gold/30 text-brand-gold text-sm tracking-widest uppercase font-semibold mb-4 bg-brand-gold/5">
+                Modern Gastronomy Analysis
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-black leading-tight gradient-text mb-8">
+                撐破肚皮的<br>極限美學
+            </h1>
+            <p class="text-slate-400 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                一場融合「老人早安圖」靈魂與現代競技飲食的奇幻之旅。
+            </p>
+        </header>
+
+        <!-- Banner Section -->
+        <section class="mb-24 relative">
+            <div class="banner-container">
+                <img src='https://opal.google/board/blobs/a9afaddb-753f-4ec0-8662-3b2b610f33a2' alt='極限大胃王早安圖風格插畫' class="rounded-3xl shadow-2xl" />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                <div class="absolute bottom-8 left-8 right-8">
+                    <span class="font-accent text-3xl md:text-5xl text-brand-lotusPink drop-shadow-lg">平安喜樂 · 胃納百川</span>
+                </div>
+            </div>
+            <div class="mt-8 text-center md:text-right italic text-slate-500 font-light">
+                * 本圖完美結合了「大胃王」與「經典早安圖」元素，展現極致視覺衝擊。
+            </div>
+        </section>
+
+        <!-- Content Bento Grid -->
+        <div class="space-y-24">
+            
+            <!-- Section 1: Intro -->
+            <section class="relative group">
+                <div class="section-number">01</div>
+                <div class="flex flex-col md:flex-row gap-12 items-start">
+                    <div class="md:w-1/3">
+                        <h2 class="text-3xl md:text-4xl font-display font-bold text-brand-gold mb-6 border-l-4 border-brand-gold pl-6">
+                            開場白：別懷疑，他們真的能塞進去！
+                        </h2>
+                        <div class="p-6 glass-card rounded-2xl border-brand-lotusPink/20 bg-brand-lotusPink/5">
+                            <p class="text-brand-lotusPink font-medium leading-relaxed">
+                                「人類胃袋的物理極限，是否也算是一種尚未被充分開發的內在宇宙？」
+                            </p>
+                        </div>
+                    </div>
+                    <div class="md:w-2/3 text-lg text-slate-300 leading-loose space-y-6">
+                        <p>
+                            身為一名對人類行為充滿好奇的觀察者，我時常在思考。當我們看著螢幕上的大胃王在短短幾分鐘內消滅掉足以供養一個小型部落的熱狗數量時，那種視覺上的衝擊，往往會讓我們暫時忘記生物學的基本常識。
+                        </p>
+                        <p>
+                            所謂的「大胃王挑戰」（Competitive Eating），本質上是一場關於「量」與「速」的極限博弈。它不單純是為了填飽肚子，而是在規定的時間內，挑戰人類咀嚼肌與胃壁張力的物理邊界。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 2: History (Asymmetric Layout) -->
+            <section class="relative">
+                <div class="section-number right-0 left-auto text-right">02</div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="order-2 md:order-1 glass-card p-10 rounded-3xl">
+                        <h2 class="text-3xl font-display font-bold text-white mb-8">懷舊時光機：原來以前都在玩「麵粉派」？</h2>
+                        <div class="space-y-6 text-slate-400">
+                            <p>
+                                真正將這項活動推向全球巔峰的，莫過於紐約康尼島的「奈森熱狗大賽」。雖然坊間流傳這項傳統始於 1916 年，但現代史學告訴我們，真正的賽事化轉型發生在 1972 年。
+                            </p>
+                            <p class="border-t border-white/10 pt-6">
+                                2001 年，日本選手<span class="text-brand-gold font-bold">小林尊（Takeru Kobayashi）</span>橫空出世，他不僅帶來了震驚世界的「所羅門吃法」，更徹底顛覆了「只有大胖子才能當大胃王」的刻板印象。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="order-1 md:order-2 flex justify-center">
+                        <div class="w-full aspect-square bg-gradient-to-br from-brand-deepRed/20 to-brand-zenBlue/20 rounded-full flex items-center justify-center border border-white/5 animate-pulse-slow">
+                            <div class="text-center p-8">
+                                <span class="block text-6xl mb-4">🌭</span>
+                                <span class="text-xl font-accent text-brand-gold">傳統與現代的吞嚥藝術</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 3: Controversy (Bento Style) -->
+            <section class="relative">
+                <div class="section-number">03</div>
+                <h2 class="text-4xl font-display font-bold text-center mb-16 text-white">兩派在吵架：這是熱血運動，還是純屬獵奇？</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="glass-card p-8 rounded-3xl border-l-8 border-green-500/50">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">✓</div>
+                            <h3 class="text-2xl font-bold">極限運動論</h3>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed">
+                            支持者將其視為「體育競技」。職業組織（如 MLE）與選手堅信，這是一項需要極高自律的極限運動。鍛鍊胃部擴張能力、鍛鍊核心肌群，這是一種對生理機能的極致開發。
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 rounded-3xl border-l-8 border-red-500/50">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center text-red-400">✕</div>
+                            <h3 class="text-2xl font-bold">獵奇娛樂論</h3>
+                        </div>
+                        <p class="text-slate-400 leading-relaxed">
+                            理性主義者則傾向將其歸類為「獵奇娛樂」或「行銷詭計」。這類表演往往缺乏傳統體育的優雅感，取而代之的是一種感官上的粗暴刺激，觀眾渴望看到的是生理界限崩塌瞬間。
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 4: Truth (Warning Aesthetic) -->
+            <section class="relative overflow-hidden bg-brand-deepRed/10 rounded-[3rem] p-8 md:p-16 border border-brand-deepRed/30">
+                <div class="section-number opacity-5 text-brand-deepRed">04</div>
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl md:text-4xl font-display font-bold text-white mb-8 text-center italic">
+                        歡樂背後的真相：胃痛不是病，撐起來要人命
+                    </h2>
+                    <div class="space-y-8 text-lg text-slate-300">
+                        <p class="drop-shadow-sm">
+                            短時間內的暴飲暴食簡直是在對身體進行「恐怖攻擊」。胃部過度擴張可能導致胃破裂、窒息或食道受傷，甚至引發致死性的水中毒。
+                        </p>
+                        <div class="bg-black/40 p-6 rounded-2xl border border-white/5">
+                            <h4 class="text-brand-gold font-bold mb-4 flex items-center gap-2">
+                                <span>⚠️</span> 糧食倫理的省思
+                            </h4>
+                            <p class="text-sm md:text-base text-slate-400">
+                                在全球糧食分配不均的背景下，將大量的優質食材轉化為排泄物或競賽廢棄物，難免會引發道德上的不適感。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section 5: Future (Minimalist Tech) -->
+            <section class="relative mb-32">
+                <div class="section-number">05</div>
+                <div class="flex flex-col items-center text-center">
+                    <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-12">未來怎麼走：從「狂塞」到「精緻優雅」？</h2>
+                    <div class="max-w-3xl glass-card p-10 rounded-[2rem] border-t-4 border-t-brand-gold">
+                        <p class="text-xl text-slate-300 leading-relaxed mb-8">
+                            未來的大胃王挑戰會消失嗎？我想不會，但它正在經歷一場「文明化」的轉型。
+                        </p>
+                        <div class="flex flex-wrap justify-center gap-4">
+                            <span class="px-6 py-2 bg-brand-zenBlue/40 rounded-full border border-brand-zenBlue text-brand-lotusPink font-semibold">ASMR 聽覺享受</span>
+                            <span class="px-6 py-2 bg-brand-zenBlue/40 rounded-full border border-brand-zenBlue text-brand-lotusPink font-semibold">吃播 (Mukbang)</span>
+                            <span class="px-6 py-2 bg-brand-zenBlue/40 rounded-full border border-brand-zenBlue text-brand-lotusPink font-semibold">文化包裝</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- Closing Message -->
+        <footer class="mt-24 text-center">
+            <div class="inline-block relative">
+                <div class="absolute -inset-4 bg-gradient-to-r from-brand-gold to-brand-lotusPink opacity-20 blur-xl animate-pulse"></div>
+                <p class="relative font-accent text-4xl md:text-6xl text-brand-gold">
+                    認同請分享
+                </p>
+            </div>
+            <p class="mt-12 text-slate-500 font-light tracking-widest uppercase">
+                Article by M11421021
+            </p>
+        </footer>
+    </main>
+
+    <script>
+        // Progress bar interaction
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("progress").style.width = scrolled + "%";
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-1000', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
+
